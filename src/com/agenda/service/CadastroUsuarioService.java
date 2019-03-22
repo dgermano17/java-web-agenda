@@ -1,5 +1,10 @@
 package com.agenda.service;
 
-public class CadastroUsuarioService {
+import com.agenda.model.Individuo;
 
+public class CadastroUsuarioService {
+	
+	public void cadastra (Individuo individuo) {
+		
+	}
 }
