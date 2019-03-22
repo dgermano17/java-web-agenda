@@ -33,5 +33,7 @@ public class CadastraUsuarioServlet extends HttpServlet {
 		service.cadastra(individuo);
 		
 		
+		
+		
 	}
 }
