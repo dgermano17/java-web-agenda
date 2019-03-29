@@ -6,10 +6,7 @@ public class IndividuoDAO {
 	
 	public void registra(Individuo individuo) {
 		
-		System.out.println(individuo.getNome());
-		System.out.println(individuo.getFone());
-		System.out.println(individuo.getEmail());
-		System.out.println(individuo.getEnd());
+		String SQL = "insert into individuo (nome, endereco, email, telefone) values (?,?,?,?)";
 		
 	}
 }
