@@ -12,9 +12,6 @@ import com.agenda.service.CadastroUsuarioService;
 
 public class CadastraUsuarioServlet extends HttpServlet {
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	@Override
@@ -31,9 +28,6 @@ public class CadastraUsuarioServlet extends HttpServlet {
 		CadastroUsuarioService service = new CadastroUsuarioService();
 		
 		service.cadastra(individuo);
-		
-		
-		
 		
 	}
 }
