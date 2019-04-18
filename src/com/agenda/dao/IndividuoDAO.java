@@ -1,7 +1,10 @@
 package com.agenda.dao;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.agenda.model.Individuo;
 import com.agenda.util.ConnectionFactory;
@@ -12,7 +15,7 @@ public class IndividuoDAO {
 
 	public void registra(Individuo individuo) {
 
-		String SQL = "insert into individuos (nome, endereco, email, telefone) values (?,?,?,?)";
+		String SQL = "insert into contatos (nome, telefone, email, endereco) values (?,?,?,?)";
 
 		try {
 			this.connection = new ConnectionFactory().getConnection();
@@ -27,6 +30,25 @@ public class IndividuoDAO {
 			stmt.close();
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
+		}
+	}
+	
+	public List<Individuo> buscaIndividuos(){
+		String  SQL = "select * from contatos";
+		
+		try {
+			
+			this.connection = new ConnectionFactory().getConnection();
+			PreparedStatement stmt = this.connection.prepareStatement(SQL);
+			
+			List<Individuo> Individuos = new ArrayList<Individuo>();
+			
+			ResultSet rs = stmt.executeQuery();
+			
+			
+			
+		} catch (Exception e) {
+			// TODO: handle exception
 		}
 	}
 }
