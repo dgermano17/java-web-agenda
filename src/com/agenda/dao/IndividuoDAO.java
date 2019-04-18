@@ -41,10 +41,23 @@ public class IndividuoDAO {
 			this.connection = new ConnectionFactory().getConnection();
 			PreparedStatement stmt = this.connection.prepareStatement(SQL);
 			
-			List<Individuo> Individuos = new ArrayList<Individuo>();
+			List<Individuo> individuos = new ArrayList<Individuo>();
 			
 			ResultSet rs = stmt.executeQuery();
 			
+			while(rs.next()) {
+				Individuo individuo = new Individuo();
+				
+				individuo.setNome(rs.getString("name"));
+				individuo.setFone(rs.getString("telefone"));
+				individuo.setEmail(rs.getString("email"));
+				individuo.setEnd(rs.getString("endereco"));
+				individuos.add(individuo);
+			}
+			
+			stmt.close();
+			this.connection.close();
+			return individuos;
 			
 			
 		} catch (Exception e) {
