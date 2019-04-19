@@ -28,6 +28,8 @@ public class IndividuoDAO {
 
 			stmt.execute();
 			stmt.close();
+			
+			buscaIndividuos();
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
@@ -48,20 +50,26 @@ public class IndividuoDAO {
 			while(rs.next()) {
 				Individuo individuo = new Individuo();
 				
-				individuo.setNome(rs.getString("name"));
+				individuo.setNome(rs.getString("nome"));
 				individuo.setFone(rs.getString("telefone"));
 				individuo.setEmail(rs.getString("email"));
 				individuo.setEnd(rs.getString("endereco"));
 				individuos.add(individuo);
+				
 			}
 			
 			stmt.close();
 			this.connection.close();
+			
+			System.out.println(individuos);
 			return individuos;
 			
 			
 		} catch (Exception e) {
-			// TODO: handle exception
+			throw new RuntimeException(e);
 		}
+		
 	}
+			
+	
 }
