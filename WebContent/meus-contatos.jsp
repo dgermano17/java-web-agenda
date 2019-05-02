@@ -40,7 +40,6 @@
 		<div class="card">
 			<div class="card-body">
 				<h1>Meus Contatos</h1>
-				<hr>
 				<table class="table">
 				  <thead>
 				    <tr>

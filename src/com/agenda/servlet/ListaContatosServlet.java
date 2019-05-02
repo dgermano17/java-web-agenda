@@ -21,7 +21,6 @@ public class ListaContatosServlet extends HttpServlet {
 	
 	@Override
 	protected void service(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("Busca por Indivudos iniciada");
 		
 		service = new CadastroUsuarioService();
 		
