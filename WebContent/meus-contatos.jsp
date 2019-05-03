@@ -47,6 +47,7 @@
 				      <th scope="col">Telefone</th>
 				      <th scope="col">E-mail</th>
 				      <th scope="col">Endereço</th>
+				      <th scope="col">Opções</th>
 				    </tr>
 				  </thead>
 				  <tbody>
@@ -56,12 +57,12 @@
 					  		<td>${individuos.fone}</td>
 					  		<td>${individuos.email}</td>
 					  		<td>${individuos.end}</td>
+					  		<td><a class="btn btn-danger" style="padding: 0.2em 0.5em; border: none" href="remove-contato">Deletar</a></td>
 					  	</tr>
 					  </c:forEach>
 				  </tbody>
 				</table>				
 			</div>
-			<button type="button" class="btn btn-info">Atualizar</button>
 		</div>
 	</div>
 

@@ -69,6 +69,9 @@ public class IndividuoDAO {
 		}
 		
 	}
-			
+	
+	public void removerContato(Individuo individuo) {
+		System.out.println("Servlet Alcança Serviço");
+	}
 	
 }
