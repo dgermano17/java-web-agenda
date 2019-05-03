@@ -61,7 +61,6 @@ public class IndividuoDAO {
 			stmt.close();
 			this.connection.close();
 			
-			System.out.println(individuos);
 			return individuos;
 			
 			

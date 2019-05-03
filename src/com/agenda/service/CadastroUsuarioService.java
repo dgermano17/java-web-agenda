@@ -14,7 +14,6 @@ public class CadastroUsuarioService {
 		
 		receberDados.registra(individuo);
 		
-		System.out.println(buscaIndividuos());
 	}
 	
 	public List<Individuo> buscaIndividuos() {

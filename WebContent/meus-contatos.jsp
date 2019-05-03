@@ -50,22 +50,15 @@
 				    </tr>
 				  </thead>
 				  <tbody>
-				    <tr>
-				      <td>Mark</td>
-				      <td>(11)1111-1111</td>
-				      <td>@mdo</td>
-				      <td>Rua A, 22</td>
-				    </tr>
+					  <c:forEach var="individuos" items="${individuos}">
+					  	<tr>
+					  		<td>${individuos.nome}</td>
+					  		<td>${individuos.fone}</td>
+					  		<td>${individuos.email}</td>
+					  		<td>${individuos.end}</td>
+					  	</tr>
+					  </c:forEach>
 				  </tbody>
-				  
-				  <c:forEach var="individuos" items="${individuos}">
-				  	<tr>
-				  		<td>${individuos.nome}</td>
-				  		<td>${individuos.fone}</td>
-				  		<td>${individuos.email}</td>
-				  		<td>${individuos.end}</td>
-				  	</tr>
-				  </c:forEach>
 				</table>				
 			</div>
 			<button type="button" class="btn btn-info">Atualizar</button>
