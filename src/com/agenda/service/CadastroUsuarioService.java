@@ -26,7 +26,8 @@ public class CadastroUsuarioService {
 	}
 
 	public void removeContato(Individuo individuo) {
-		this.dao.removerContato(individuo);
+		IndividuoDAO dao = new IndividuoDAO();
+		dao.removerContato(individuo);
 		
 	}
 }

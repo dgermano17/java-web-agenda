@@ -47,17 +47,19 @@
 				      <th scope="col">Telefone</th>
 				      <th scope="col">E-mail</th>
 				      <th scope="col">Endereço</th>
+				      <th scope="col">Id</th>
 				      <th scope="col">Opções</th>
 				    </tr>
 				  </thead>
-				  <tbody>
+				  <tbody> 
 					  <c:forEach var="individuos" items="${individuos}">
 					  	<tr>
 					  		<td>${individuos.nome}</td>
 					  		<td>${individuos.fone}</td>
 					  		<td>${individuos.email}</td>
 					  		<td>${individuos.end}</td>
-					  		<td><a class="btn btn-danger" style="padding: 0.2em 0.5em; border: none" href="remove-contato">Deletar</a></td>
+					  		<td>${individuos.id}</td>
+					  		<td><a class="btn btn-danger" style="padding: 0.2em 0.5em; border: none" href="remove-contato?id=${individuos.id}">Deletar</a></td>
 					  	</tr>
 					  </c:forEach>
 				  </tbody>

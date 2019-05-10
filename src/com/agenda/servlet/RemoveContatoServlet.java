@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.agenda.model.Individuo;
 import com.agenda.service.CadastroUsuarioService;
 
 @WebServlet("/remove-contato")
@@ -19,8 +20,15 @@ public class RemoveContatoServlet extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		CadastroUsuarioService service = new CadastroUsuarioService();
-		service.removeContato(null);
+		
+		long id = Long.parseLong(request.getParameter("id"));
+		
+		Individuo individuo = new Individuo();
+		individuo.setId(id);
 
+		service.removeContato(individuo);
+		
+		response.sendRedirect("busca-individuos");
 	}
 
 }
