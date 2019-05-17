@@ -19,7 +19,7 @@ public class CadastraUsuarioServlet extends HttpServlet {
 	
 		
 //		if(null != request.getParameter("id") && !request.getParameter("id").equals("")) {
-//			
+//			servic.editar(individuo);
 //		}
 		
 		Individuo individuo = new Individuo();
