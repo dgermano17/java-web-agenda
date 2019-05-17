@@ -30,7 +30,7 @@
 	  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 	    <div class="navbar-nav">
 	    	<a class="nav-item nav-link" href="index.html">Home</a>
-	    	<a class="nav-item nav-link" href="adiciona-contato.html">Novo Cadastro</a>
+	    	<a class="nav-item nav-link" href="adiciona-contato.jsp">Novo Cadastro</a>
 	    	<a class="nav-item nav-link active" href="#">Meus Contatos</a>
 	    </div>
 	  </div>
@@ -54,12 +54,16 @@
 				  <tbody> 
 					  <c:forEach var="individuos" items="${individuos}">
 					  	<tr>
+					  		<td>${individuos.id}</td>
 					  		<td>${individuos.nome}</td>
 					  		<td>${individuos.fone}</td>
 					  		<td>${individuos.email}</td>
 					  		<td>${individuos.end}</td>
-					  		<td>${individuos.id}</td>
-					  		<td><a class="btn btn-danger" style="padding: 0.2em 0.5em; border: none" href="remove-contato?id=${individuos.id}">Deletar</a></td>
+					  		<td><a class="btn btn-danger" style="padding: 0.2em 0.5em; border: none; width: 4em" href="remove-contato?id=${individuos.id}">Deletar</a>
+					  			<a class="btn btn-info" style="padding: 0.2em 0.5em; border: none; width: 4em" href="adiciona-contato.jsp?id=${individuos.id}
+					  			&nome=${individuos.nome}
+					  			&fone=${individuos.fone}
+					  			&email=${individuos.email}$endereco=${individuos.end}">Editar</a></td>
 					  	</tr>
 					  </c:forEach>
 				  </tbody>
