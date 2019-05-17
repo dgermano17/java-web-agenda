@@ -85,4 +85,8 @@ public class IndividuoDAO {
 		}
 	}
 	
+	public void editarContato() {
+		
+	}
+	
 }

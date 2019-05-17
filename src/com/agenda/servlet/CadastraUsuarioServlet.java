@@ -18,6 +18,10 @@ public class CadastraUsuarioServlet extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 		
+//		if(null != request.getParameter("id") && !request.getParameter("id").equals("")) {
+//			
+//		}
+		
 		Individuo individuo = new Individuo();
 		
 		individuo.setNome(request.getParameter("name"));
