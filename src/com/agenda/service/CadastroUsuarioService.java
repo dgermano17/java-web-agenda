@@ -30,5 +30,9 @@ public class CadastroUsuarioService {
 		dao.removerContato(individuo);
 		
 	}
+	
+	public void alterar(Individuo individuo) {
+		dao.editar(individuo);
+	}
 }
 

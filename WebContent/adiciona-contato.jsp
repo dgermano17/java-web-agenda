@@ -40,7 +40,7 @@
 				<form action="cadastra-usuario" id="form-produto">
 					<div class="form-row">
 						<div class="form-group col-md-12">
-							<input type="text" class="form-control" id="name" name="name" placeholder="Nome" required="on">
+							<input type="text" class="form-control" id="name" name="nome" placeholder="Nome" required="on">
 						</div>
 					</div>
 
@@ -54,7 +54,7 @@
 						</div>
 
 						<div class="form-group col-md-6">
-							<input type="text" class="form-control" id="end" name="endereco" placeholder="EndereÃ§o">
+							<input type="text" class="form-control" id="end" name="endereco" placeholder="Endereço">
 						</div>
 
 						<div class="form-group col-md-6">

@@ -85,8 +85,25 @@ public class IndividuoDAO {
 		}
 	}
 	
-	public void editarContato() {
+	public void editar(Individuo individuo) {
+		String SQL = "update contatos set nome=?, email=?, endereco=?, telefone=?, where id=?";
 		
+		try {
+			
+			this.connection = new ConnectionFactory().getConnection();
+			PreparedStatement stmt =  this.connection.prepareStatement(SQL);
+			
+			stmt.setLong(1, individuo.getId());
+			stmt.setString(2, individuo.getNome());
+			stmt.setString(3, individuo.getFone());
+			stmt.setString(4, individuo.getEmail());
+			stmt.setString(5, individuo.getEnd());
+			stmt.execute();
+			stmt.close();
+			
+		}catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
 	}
 	
 }

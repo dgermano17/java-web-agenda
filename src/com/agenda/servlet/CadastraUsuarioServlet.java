@@ -18,18 +18,22 @@ public class CadastraUsuarioServlet extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 		
-//		if(null != request.getParameter("id") && !request.getParameter("id").equals("")) {
-//			servic.editar(individuo);
-//		}
-		
+		request.setCharacterEncoding("UTF-8");
 		Individuo individuo = new Individuo();
 		
-		individuo.setNome(request.getParameter("name"));
+		individuo.setNome(request.getParameter("nome"));
 		individuo.setFone(request.getParameter("telefone"));
 		individuo.setEmail(request.getParameter("email"));
 		individuo.setEnd(request.getParameter("endereco"));
 		
 		CadastroUsuarioService service = new CadastroUsuarioService();
+
+		if(null != request.getParameter("id") && !request.getParameter("id").equals("")) {
+			individuo.setId(Long.parseLong(request.getParameter("id")));
+			service.alterar(individuo);
+		}else {
+			service.cadastra(individuo);
+		}
 		
 		service.cadastra(individuo);
 		response.sendRedirect("busca-individuos");
