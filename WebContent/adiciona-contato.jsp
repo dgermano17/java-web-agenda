@@ -43,21 +43,21 @@
 					
 					<div class="form-row">
 						<div class="form-group col-md-12">
-							<input type="text" class="form-control" id="name" name="nome" placeholder="Nome" required="required">
+							<input type="text" class="form-control" id="name" name="nome" value="${param.nome}" placeholder="Nome" required="required">
 						</div>
 					</div>
 
 					<div class="form-row">
 						<div class="form-group col-md-3">
-							<input type="text" class="form-control" id="tel" name="telefone" placeholder="Telefone" data-mask="(99)9999-9999">
+							<input type="text" class="form-control" id="tel" name="telefone" value="${param.fone}" placeholder="Telefone" data-mask="(99)9999-9999">
 						</div>
 
 						<div class="form-group col-md-3">
-							<input type="email" class="form-control" id="email" name="email"placeholder="E-mail">
+							<input type="email" class="form-control" id="email" value="${param.email}" name="email"placeholder="E-mail">
 						</div>
 
 						<div class="form-group col-md-6">
-							<input type="text" class="form-control" id="end" name="endereco" placeholder="Endereço">
+							<input type="text" class="form-control" id="end" value="${param.endereco}" name="endereco" placeholder="Endereço">
 						</div>
 
 						<div class="form-group col-md-6">

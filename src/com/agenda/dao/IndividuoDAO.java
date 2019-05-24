@@ -31,6 +31,7 @@ public class IndividuoDAO {
 			stmt.close();
 			
 			buscaIndividuos();
+			
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
@@ -86,18 +87,18 @@ public class IndividuoDAO {
 	}
 	
 	public void editar(Individuo individuo) {
-		String SQL = "update contatos set nome=?, email=?, endereco=?, telefone=?, where id=?";
+		String SQL = "update contatos set nome=?,email=?,endereco=?,telefone=? where id=?";
 		
 		try {
 			
 			this.connection = new ConnectionFactory().getConnection();
 			PreparedStatement stmt =  this.connection.prepareStatement(SQL);
 			
-			stmt.setLong(1, individuo.getId());
-			stmt.setString(2, individuo.getNome());
-			stmt.setString(3, individuo.getFone());
-			stmt.setString(4, individuo.getEmail());
-			stmt.setString(5, individuo.getEnd());
+			stmt.setString(1,  individuo.getNome());
+			stmt.setString(2, individuo.getEmail());
+			stmt.setString(3, individuo.getEnd());
+			stmt.setString(4, individuo.getFone());
+			stmt.setLong(5, individuo.getId());
 			stmt.execute();
 			stmt.close();
 			
