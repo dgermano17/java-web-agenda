@@ -31,7 +31,7 @@ public class CadastroUsuarioService {
 		
 	}
 	
-	public void alterar(Individuo individuo) {
+	public void altera(Individuo individuo) {
 		dao.editar(individuo);
 	}
 }

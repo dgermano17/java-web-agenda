@@ -38,9 +38,12 @@
 				<h1>Dados Pessoais:</h1>
 				<hr>
 				<form action="cadastra-usuario" id="form-produto">
+				
+					<input type="hidden" name="id" value="${param.id}"></input>
+					
 					<div class="form-row">
 						<div class="form-group col-md-12">
-							<input type="text" class="form-control" id="name" name="nome" placeholder="Nome" required="on">
+							<input type="text" class="form-control" id="name" name="nome" placeholder="Nome" required="required">
 						</div>
 					</div>
 

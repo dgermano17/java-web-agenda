@@ -61,9 +61,7 @@
 					  		<td>${individuos.end}</td>
 					  		<td><a class="btn btn-danger" style="padding: 0.2em 0.5em; border: none; width: 4em" href="remove-contato?id=${individuos.id}">Deletar</a>
 					  			<a class="btn btn-info" style="padding: 0.2em 0.5em; border: none; width: 4em" href="adiciona-contato.jsp?id=${individuos.id}
-					  			&nome=${individuos.nome}
-					  			&fone=${individuos.fone}
-					  			&email=${individuos.email}$endereco=${individuos.end}">Editar</a></td>
+					  			&nome=${individuos.nome}&fone=${individuos.fone}&email=${individuos.email}$endereco=${individuos.end}">Editar</a></td>
 					  	</tr>
 					  </c:forEach>
 				  </tbody>
