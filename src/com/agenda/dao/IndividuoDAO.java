@@ -15,7 +15,7 @@ public class IndividuoDAO {
 
 	public void registra(Individuo individuo) {
 
-		String SQL = "insert into contatos (nome, telefone, email, endereco, id) values (?,?,?,?,?)";
+		String SQL = "insert into contatos (nome, telefone, email, endereco) values (?,?,?,?)";
 
 		try {
 			this.connection = new ConnectionFactory().getConnection();
@@ -25,8 +25,7 @@ public class IndividuoDAO {
 			stmt.setString(2, individuo.getFone());
 			stmt.setString(3, individuo.getEmail());
 			stmt.setString(4, individuo.getEnd());
-			stmt.setLong(5, individuo.getId());
-
+			
 			stmt.execute();
 			stmt.close();
 			

@@ -34,7 +34,6 @@ public class CadastraUsuarioServlet extends HttpServlet {
 			service.cadastra(individuo);
 		}
 		
-		service.cadastra(individuo);
 		response.sendRedirect("busca-individuos");
 		
 	}
