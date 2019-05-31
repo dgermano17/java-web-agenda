@@ -10,16 +10,22 @@ import com.agenda.model.Individuo;
 import com.agenda.util.ConnectionFactory;
 import com.mysql.jdbc.Connection;
 
-public class IndividuoDAO {
-	private Connection connection;
-
+	public class IndividuoDAO {
+		private Connection connection;
+		private PreparedStatement stmt;
+	}
+	
+	public class IndividuoDAO() {
+		this.connection = new ConnectionFactory().getConnection();		
+	}
+	
+	
 	public void registra(Individuo individuo) {
 
 		String SQL = "insert into contatos (nome, telefone, email, endereco) values (?,?,?,?)";
 
 		try {
-			this.connection = new ConnectionFactory().getConnection();
-			PreparedStatement stmt = this.connection.prepareStatement(SQL);
+			this.stmt = this.connection.prepareStatement(SQL);
 
 			stmt.setString(1, individuo.getNome());
 			stmt.setString(2, individuo.getFone());
@@ -42,7 +48,7 @@ public class IndividuoDAO {
 		try {
 			
 			this.connection = new ConnectionFactory().getConnection();
-			PreparedStatement stmt = this.connection.prepareStatement(SQL);
+//			PreparedStatement stmt = this.connection.prepareStatement(SQL);
 			
 			List<Individuo> individuos = new ArrayList<Individuo>();
 			
@@ -76,7 +82,7 @@ public class IndividuoDAO {
 		
 		try{
 			this.connection = new ConnectionFactory().getConnection();
-			PreparedStatement stmt = connection.prepareStatement(SQL);
+//			PreparedStatement stmt = connection.prepareStatement(SQL);
 			stmt.setLong(1, individuo.getId());
 			stmt.execute();
 			stmt.close();
@@ -91,7 +97,7 @@ public class IndividuoDAO {
 		try {
 			
 			this.connection = new ConnectionFactory().getConnection();
-			PreparedStatement stmt =  this.connection.prepareStatement(SQL);
+//			PreparedStatement stmt =  this.connection.prepareStatement(SQL);
 			
 			stmt.setString(1,  individuo.getNome());
 			stmt.setString(2, individuo.getEmail());
