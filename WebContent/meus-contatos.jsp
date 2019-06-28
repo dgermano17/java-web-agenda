@@ -8,17 +8,13 @@
 
 <meta charset="UTF-8">
 <title>Meus Contatos</title>
-<link crossorigin="anonymous"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-	rel="stylesheet">
-<link crossorigin="anonymous"
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<link 
 	href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
-	integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
 	rel="stylesheet">
-<link crossorigin="anonymous"
+<link 
 	href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
-	integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
 	rel="stylesheet">
 </head>
 <body>
@@ -59,7 +55,7 @@
 					  		<td>${individuos.fone}</td>
 					  		<td>${individuos.email}</td>
 					  		<td>${individuos.end}</td>
-					  		<td><a class="btn btn-danger" style="padding: 0.2em 0.5em; border: none; width: 4em" href="remove-contato?id=${individuos.id}">Deletar</a>
+					  		<td><a data-toggle="modal" data-target="#exampleModal" class="btn btn-danger" style="padding: 0.2em 0.5em; border: none; width: 4em" href="#" onclick="passarId(${individuos.id})">Deletar</a>
 					  			<a class="btn btn-info" style="padding: 0.2em 0.5em; border: none; width: 4em" href="adiciona-contato.jsp?id=${individuos.id}&nome=${individuos.nome}&fone=${individuos.fone}&email=${individuos.email}&endereco=${individuos.end}">Editar</a></td>
 					  	</tr>
 					  </c:forEach>
@@ -69,8 +65,38 @@
 		</div>
 	</div>
 
+	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">...</div>
+				<div class="modal-footer">
+					<a type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</a>
+					<a type="button" href="#" class="btn btn-primary" onclick="confirmDelete()">Deletar</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<script src="js/jquery.js" type="text/javascript"></script>
     <script src="js/bootstrap.js" type="text/javascript"></script>
     <script src="js/inputMask.js"></script>
+    <script>
+    	var trasnporteId;
+    	function passarId(caseId){
+    		trasnporteId = caseId;
+    	}
+    	
+    	function confirmDelete(){
+    		window.location.href = "remove-contato?id=" + trasnporteId;
+    	}
+    </script>
 </body>
 </html>
